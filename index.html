@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+<body>
+
+  <!-- Navigation section -->
+
+<nav >
+  <div class="nav-left">
+    <div class="menu-icon">
+      <button onclick="onSwitch()">  </button>
+    </div>
+
+    <div class="logo">
+      <img src="./images/logo.svg">
+    </div>
+
+    <div class="nav-items">
+      <div class="close-icon">
+        <button onclick="offSwitch()">  </button>
+      </div>
+      <div class="nav-item">
+        <a>Collections</a>
+      </div>
+      <div class="nav-item">
+        <a>Men</a>
+      </div>
+      <div class="nav-item">
+        <a>Women</a>
+      </div>
+      <div class="nav-item">
+        <a>About</a>
+      </div>
+      <div class="nav-item">
+        <a>Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <span class="count-display">  </span>
+    <div class="cart-icon">
+      <button id="icon-cart" onclick="cartToggler()"></button>
+    </div>
+    <div class="image-avatar">
+      <img src="./images/image-avatar.png" alt="image-avatar" width="32%">
+    </div>
+  </div>
+  
+</nav>
+
+<main>
+
+  <div class="cart-display">
+    <h5>Cart</h5>
+    <hr>
+    <div class="cart-info">
+      <img class="cart-thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="">
+      <p> Fall Limited Edition Sneakers <br>
+        $125.00 x 3 <span class="product-total">$375.00</span>
+      </p> <br>
+      <button class="checkout-button">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Product display section -->
+
+  <div class="product-display">
+    <div class="product-image-large">
+      <!-- <img src="./images/image-product-1.jpg" alt=""> -->
+    </div>
+    <div class="carousel-buttons">
+      <button class="previous" onclick="previous()"></button>
+      <button class="next" onclick="next()"></button>
+    </div>
+
+    <div class="product-image-small">
+      <img src="./images/image-product-1-thumbnail.jpg" alt="" class="product-thumbnail" width="17%">
+      <img src="./images/image-product-2-thumbnail.jpg" alt="" class="product-thumbnail" width="17%">
+      <img src="./images/image-product-3-thumbnail.jpg" alt="" class="product-thumbnail" width="17%">
+      <img src="./images/image-product-4-thumbnail.jpg" alt="" class="product-thumbnail" width="17%">
+    </div>
+  </div>
+
+  <!-- Product detail section -->
+
+  <div class="product-detail">
+    <div class="company"> 
+      <span>
+        sneakers company
+      </span>
+    </div>
+    <div class="title"> 
+      <h3>
+        Fall Limited Edition <br>Sneakers
+      </h3>
+    </div>
+    <div class="description">
+      <p>  These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+    </div>
+    <div class="pricing"> 
+      <div class="promo-price">
+        <span class="pay"> $125.00</span>
+        <span class="discount">  50% </span>
+      </div>
+
+      <div class="original-price">
+        <span>$250.00</span>
+      </div>
+
+    </div>
+
+    <!-- Cart quantity section -->
+
+    <div class="quantity">
+      <div class="counter">
+        <button class="down-count" onclick="reduceCount()"> - </button>
+        <span class="count-value"> 0 </span>
+        <button class="up-count" onclick="raiseCount()"> + </button>
+      </div>
+      <div class="add-to-cart">
+          <button> <img src="./images/icon-cart.svg" alt=""> Add to cart</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+<script src="./index.js" defer></script>
+</body>
+</html>
