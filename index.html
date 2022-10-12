@@ -68,7 +68,7 @@
     <div class="cart-info">
       <img class="cart-thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="">
       <p> Fall Limited Edition Sneakers <br>
-        $125.00 x 3 <span class="product-total">$375.00</span>
+        $125.00 x <span class="product-multiple">0</span><span class="product-total">0</span>
       </p> <br>
       <button class="checkout-button">Checkout</button>
     </div>
@@ -113,7 +113,7 @@
     </div>
     <div class="pricing"> 
       <div class="promo-price">
-        <span class="pay"> $125.00</span>
+        <span class="pay"> $<span class="product-price">125.00</span></span>
         <span class="discount">  50% </span>
       </div>
 
@@ -128,11 +128,11 @@
     <div class="quantity">
       <div class="counter">
         <button class="down-count" onclick="reduceCount()"> - </button>
-        <span class="count-value"> 0 </span>
+        <span class="count-value"> 1 </span>
         <button class="up-count" onclick="raiseCount()"> + </button>
       </div>
       <div class="add-to-cart">
-          <button>
+          <button onclick="addToCart()">
              <img class="white-filter" src="./images/icon-cart.svg" alt=""> Add to cart</button>
       </div>
     </div>

@@ -2,9 +2,8 @@
 var clicked = false;
 var menu = document.querySelector(".nav-items"); 
 var close = document.querySelector(".close-icon");
-var countValue = document.querySelector(".count-value").innerHTML;
-countValue = parseInt(countValue);
-countValue = 0;
+var countValue = parseInt(document.querySelector(".count-value").innerHTML);
+countValue = 1;
 
 
 //  Navigation Logic section
@@ -37,14 +36,19 @@ function countDisplay() {
 }
 
 function raiseCount() {
-    countValue++;
-    countDisplay(); 
+    countValue++
+    if (countValue > 0){
+        document.querySelector(".count-value").innerHTML = countValue;
+    } 
+        
 }
 
 
 function reduceCount() {
     --countValue;
-    countDisplay();
+    if (countValue > 0){
+        document.querySelector(".count-value").innerHTML = countValue;
+    } 
 }
 
  var cartIcon = document.getElementById("icon-cart");
@@ -66,6 +70,36 @@ function reduceCount() {
           
       }
  }
+ if (countValue == 0){
+    document.querySelector(".cart-info").innerHTML = "Your cart is empty.";
+    document.querySelector(".cart-info").style.textAlign = "center";
+    
+
+}
+
+ var productPrice = document.querySelector(".product-price").innerHTML;
+  productPrice = parseFloat(productPrice);
+
+
+ 
+ function addToCart(countValue) {
+    seed(countValue);
+    countDisplay();
+ }
+
+ function seed(x){
+    if (countValue >= 1 ) {
+        document.querySelector(".product-multiple").innerHTML = countValue; 
+        document.querySelector(".product-total").innerHTML = "$" + (countValue * productPrice);
+ }
+ }
+
+//  function productQuantity() {
+//     x = ;
+    
+//  }
+
+//  addToCart(productQuantity);
 // cartIcon.addEventListener("click", function () {
 //         cartDisplay.style.display = "none";
 
@@ -105,17 +139,17 @@ function previous() {
     productDisplay.style.backgroundImage = "url('./images/image-" + images[i] + ".jpg')";
 }
 
-
+setTimeout(next, 2000);
 const images = ["product-1", "product-2", "product-3", "product-4"];
 size = images.length;
 
-function clear(){
-    for (let i = 0; i<size; i++) {
-        clearTimeout(timer);
-        timer = setTimeout(() => next(), 3000);
-        productDisplay.style.backgroundImage = "url('./images/image-" + images[i] + ".jpg')";
-    }
-}
+// function clear(){
+//     for (let i = 0; i<size; i++) {
+//         clearTimeout(timer);
+//         timer = setTimeout(() => next(), 3000);
+//         productDisplay.style.backgroundImage = "url('./images/image-" + images[i] + ".jpg')";
+//     }
+// }
 
 
 var thumbnail = document.querySelectorAll(".product-thumbnail");
@@ -124,14 +158,26 @@ var numberOfThumbnails = thumbnail.length;
     for (let i=0; i<numberOfThumbnails; i++) {
         thumbnail[i].addEventListener("click", function() {
             productDisplay.style.backgroundImage = "url('./images/image-" + images[i] + ".jpg')";
+            thumbnail[i].classList.add('clicked');
+
+            setTimeout(function (){
+    
+                thumbnail[i].classList.remove('clicked');
+            
+            }, 200);
         })
 }
+ 
 
 
-
-// setTimeout(function (){
-//     activeButton.classList.remove("pressed")
-// }, 100);
+setTimeout(function (){
+    // activeButton.classList.remove("pressed")
+    for (let i=0; i<numberOfThumbnails; i++) {
+        thumbnail[i].addEventListener("click", function() {
+            productDisplay.style.backgroundImage = "url('./images/image-" + images[i] + ".jpg')";
+        })
+}
+}, 2000);
 
 
 // addEventListener("keypress", function(event) {

@@ -62,11 +62,16 @@ nav{
 }
 .nav-item{
     display: flex;
+    height: 4.5rem;
     align-items: center;
     justify-content: center;
     margin: auto 0.3rem;
 }
 
+
+.nav-item:hover{
+    border-bottom: 2px solid var(--Orange);
+}
 .nav-right{
     display: flex;
     height: 4rem;
@@ -75,6 +80,10 @@ nav{
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
+}
+
+.nav-right img:hover{
+    width: 36px;
 }
 
 .count-display{
@@ -155,9 +164,14 @@ nav{
     margin-right: 1rem;
 }
 
+.product-total{
+    margin-left: 0.4rem;
+}
+
 .checkout-button{
     height: 2rem;
     width: 100%;
+    color: var(--White);
     background-color: var(--Orange);
     border: none;
     border-radius: 0.4rem;
@@ -216,6 +230,14 @@ main{
     border-radius: 0.3rem;
 }
 
+.product-thumbnail:hover{
+    filter: opacity(50%);
+}
+
+.clicked{
+    border: 2px solid var(--Orange);
+}
+
 .product-detail{
     display: flex;
     flex-direction: column;
@@ -248,7 +270,13 @@ main{
 .pricing{
     margin: 0 0 1rem 0;
 }
+
 .pay{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.product-value{
     font-size: 1rem;
     font-weight: 700;
 }
@@ -293,6 +321,11 @@ main{
     border-radius: 0.3rem;
 }
 
+.up-count::backdrop{
+    color: aqua;
+    border-color: var(--Orange);
+}
+
 .down-count{
     border: none;
     width: 38%;
@@ -332,6 +365,11 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+.add-to-cart button:hover{
+    filter: opacity(50%);
+}
+
 
 /* Mobile design */
 @media screen and (max-width: 540px) {
@@ -403,20 +441,27 @@ main{
         background-image: url(./images/icon-close.svg);
         background-repeat: no-repeat;
         border: none;
-        width: 1rem;
-        height: 1rem;
+        width: 2rem;
+        height: 2rem;
         background-color: transparent;
     }
 
     .nav-item{
         display: flex;
         justify-content: flex-start;
+        height: 1rem;
         margin: 1.2rem 0;
         font-weight: 700;
         color: var(--Black);
 
     }
-    
+    .nav-item a:hover{
+        border-bottom: 2px solid var(--Orange);
+    }
+
+    .nav-item:hover{
+        border-bottom: none;
+    }
     .nav-right{
         display: flex;
         flex-direction: row;
@@ -426,7 +471,9 @@ main{
     #icon-cart {
         margin: 0;
         display: flex;
-        width: 20px;
+        width: 23px;
+        height: 20px;
+        padding: 0;
         
     }
 
@@ -443,7 +490,7 @@ main{
     .cart-display{
         display: none;
         height: 17rem;
-        width: 22rem;
+        width: 21rem;
         position: absolute;
         padding: 1rem;
         right: 0.909rem;
@@ -472,7 +519,6 @@ main{
     .checkout-button{
         height: 3rem;
         width: 100%;
-        color: var(--White);
         font-weight: 700;
         background-color: var(--Orange);
         border: none;
